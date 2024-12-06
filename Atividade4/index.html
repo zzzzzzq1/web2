@@ -11,36 +11,28 @@
             width: 100%;
             height: auto;
             margin-bottom: 15px;
+            object-fit: cover; /* Para evitar distorção */
+            border-radius: 8px; /* Para bordas arredondadas (opcional) */
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
         }
     </style>
 </head>
 <body>
     <div class="container mt-4">
-        <div class="row gallery">
-            <div class="col-12 col-md-8">
-                <img src="https://placekitten.com/800/600" alt="Gato 1">
-            </div>
-            <div class="col-12 col-md-4">
-                <img src="https://placekitten.com/400/600" alt="Gato 2">
-            </div>
-            <div class="col-6 col-md-4">
-                <img src="https://placekitten.com/400/300" alt="Gato 3">
-            </div>
-            <div class="col-6 col-md-4">
-                <img src="https://placekitten.com/401/300" alt="Gato 4">
-            </div>
-            <div class="col-6 col-md-4">
-                <img src="https://placekitten.com/402/300" alt="Gato 5">
-            </div>
-            <div class="col-6 col-md-4">
-                <img src="https://placekitten.com/403/300" alt="Gato 6">
-            </div>
-            <div class="col-6 col-md-4">
-                <img src="https://placekitten.com/404/300" alt="Gato 7">
-            </div>
-            <div class="col-6 col-md-4">
-                <img src="https://placekitten.com/405/300" alt="Gato 8">
-            </div>
+        <div class="gallery">
+            <img src="https://placekitten.com/800/600" alt="Gato 1">
+            <img src="https://placekitten.com/400/600" alt="Gato 2">
+            <img src="https://placekitten.com/400/300" alt="Gato 3">
+            <img src="https://placekitten.com/401/300" alt="Gato 4">
+            <img src="https://placekitten.com/402/300" alt="Gato 5">
+            <img src="https://placekitten.com/403/300" alt="Gato 6">
+            <img src="https://placekitten.com/404/300" alt="Gato 7">
+            <img src="https://placekitten.com/405/300" alt="Gato 8">
         </div>
     </div>
 </body>
