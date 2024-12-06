@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manipulação de Arrays</title>
+</head>
+<body>
+  <h1>Array de Linguagens</h1>
+  
+  <button onclick="mostrarListaLinguagens()">Criar Array</button> <br><br>
+ 
+  <button onclick="posicaoLinguagens()">Posição no Array</button>
+  <button onclick="limparArrayLinguagens()">Limpar Array</button>
+  
+  <div id="minhaDiv"></div>
+
+  <hr style="border: 1px solid black;">
+
+  <h1>Array de Frutas</h1>
+  
+  <button onclick="mostrarListaFrutas()">Criar Array</button> <br><br>
+ 
+  <button onclick="posicaoFrutas()">Posição no Array</button>
+  <button onclick="limparArrayFrutas()">Limpar Array</button>
+  
+  <div id="minhaDivFrutas"></div>
+</body>
+  
+<script>
+  let linguagens = [];
+  let frutas = [];
+
+  function inicializarLinguagens() {
+    linguagens = ['Dart', 'PHP', 'Java', 'Python', 'Perl', 'Ruby on Rails', 'C++'];
+  }
+
+  function inicializarFrutas() {
+    frutas = ['Maçã', 'Banana', 'Laranja', 'Manga', 'Uva', 'Abacaxi', 'Morango'];
+  }
+
+  function mostrarListaLinguagens() {
+    if (linguagens.length === 0) {
+      inicializarLinguagens(); // Recria o array se estiver vazio
+    }
+    const container = document.getElementById("minhaDiv");
+    container.innerHTML = ''; // Limpa antes de mostrar a lista
+    for (var i = 0; i < linguagens.length; i++) {
+      var tag = '<h5>' + i + ' _ ' + linguagens[i] + '</h5>';
+      container.innerHTML += tag;
+    }
+  }
+
+  function posicaoLinguagens() {
+    var indice = prompt('Qual posição da lista deseja consultar?');
+    if (indice !== null) {
+      if (indice >= 0 && indice < linguagens.length) {
+        alert(linguagens[indice]);
+      } else {
+        alert('Posição Inválida');
+      }
+    }
+  }
+
+  function limparArrayLinguagens() {
+    linguagens = [];
+    document.getElementById("minhaDiv").innerHTML = ''; // Atualiza visualmente
+  }
+
+  function mostrarListaFrutas() {
+    if (frutas.length === 0) {
+      inicializarFrutas(); // Recria o array se estiver vazio
+    }
+    const container = document.getElementById("minhaDivFrutas");
+    container.innerHTML = ''; // Limpa antes de mostrar a lista
+    for (var i = 0; i < frutas.length; i++) {
+      var tag = '<h5>' + i + ' _ ' + frutas[i] + '</h5>';
+      container.innerHTML += tag;
+    }
+  }
+
+  function posicaoFrutas() {
+    var indice = prompt('Qual posição da lista deseja consultar?');
+    if (indice !== null) {
+      if (indice >= 0 && indice < frutas.length) {
+        alert(frutas[indice]);
+      } else {
+        alert('Posição Inválida');
+      }
+    }
+  }
+
+  function limparArrayFrutas() {
+    frutas = [];
+    document.getElementById("minhaDivFrutas").innerHTML = ''; // Atualiza visualmente
+  }
+</script>
+</html>

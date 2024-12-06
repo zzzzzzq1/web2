@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interações com JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        input {
+            padding: 8px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 300px;
+        }
+
+        div {
+            margin-top: 10px;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        hr {
+            border: none;
+            height: 2px;
+            background-color: #ccc;
+            margin: 20px 0;
+        }
+
+        .resultado {
+            color: #444;
+            background-color: #eef;
+            border-radius: 5px;
+        }
+    </style>
+    <script>
+        // Função para calcular a raiz quadrada e mostrar no alerta
+        function calcularRaizQuadrada(numero) {
+            var resultado = Math.sqrt(numero);
+            alert("Raiz quadrada de " + numero + " é: " + resultado);
+        }
+
+        // Função para mostrar o texto digitado pelo usuário
+        function mostrarTexto() {
+            var texto = document.getElementById("textoInput").value; // Pega o valor digitado
+            document.getElementById("textoResultado").innerText = "Texto digitado: " + texto;
+        }
+
+        // Função para escrever dentro da div com o número digitado
+        function escreverNaDiv() {
+            var numeroDigitado = document.getElementById("numeroInput").value;
+            document.getElementById("numeroResultado").innerText = "Número digitado: " + numeroDigitado;
+        }
+    </script>
+</head>
+<body>
+    <h1>Interações com JavaScript</h1>
+
+    <!-- Seção de Raiz Quadrada -->
+    <h2>Cálculo da Raiz Quadrada</h2>
+    <p>Clique em um dos botões abaixo para calcular a raiz quadrada de um número:</p>
+    <button onclick="calcularRaizQuadrada(25)">Raiz de 25</button>
+    <button onclick="calcularRaizQuadrada(36)">Raiz de 36</button>
+    <button onclick="calcularRaizQuadrada(49)">Raiz de 49</button>
+    <hr>
+
+    <!-- Seção de Texto -->
+    <h2>Exibir Texto Digitado</h2>
+    <p>Digite algo no campo abaixo e clique no botão para exibir o texto:</p>
+    <input type="text" id="textoInput" placeholder="Digite algo...">
+    <button onclick="mostrarTexto()">Mostrar Texto</button>
+    <div id="textoResultado" class="resultado"></div>
+    <hr>
+
+    <!-- Seção de Número -->
+    <h2>Exibir Número Digitado</h2>
+    <p>Digite um número no campo abaixo e clique no botão para exibir o número:</p>
+    <input type="number" id="numeroInput" placeholder="Digite um número...">
+    <button onclick="escreverNaDiv()">Mostrar Número</button>
+    <div id="numeroResultado" class="resultado"></div>
+</body>
+</html>
